@@ -18,7 +18,7 @@ def minutesTime(time, delta):
   return time
 
 with open(outFilePath, 'w', encoding="utf-8") as f:
-  for l in fileinput.input(filePath):
+  for l in fileinput.input(filePath, encoding="utf-8"):
     matches = re.match("^(\d+):(\d+):(\d+)\.(\d+),(\d+):(\d+):(\d+)\.(\d+)$", l)
     if matches != None:
       matches = list(map(int, matches.groups()))
